@@ -63,6 +63,12 @@ This Dockerfile sets up an environment for an Atomic deployment on a Ubuntu 20.0
 17. **Start-Up Command**: Defines the start-up command for the container to start PostgreSQL, Redis, and the Atomic API using pm2.
 
 ## Build & Run
+
+> It is important to note that the 3 files in the `files` directory be updated to your preferences. `The current ones` are based off a `test` deployment I performed, for which the output is available in the `test` folder. 
+> * connections.config.json
+> * readers.config.json
+> * server.config.json
+
 ```bash
 $ docker build -t my-atomic-deployment .
 $ docker run -d --name atomic-deployment -p 5432:5432 my-atomic-deployment
