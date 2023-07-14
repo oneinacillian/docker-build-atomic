@@ -69,6 +69,9 @@ This Dockerfile sets up an environment for an Atomic deployment on a Ubuntu 20.0
 > * readers.config.json
 > * server.config.json
 
-```bash
+```
 $ docker build -t my-atomic-deployment .
 $ docker run -d --name atomic-deployment -p 5432:5432 my-atomic-deployment
+--or if using an docker volume which I would advise to map your PGDATA volume to a bigger/faster storage--
+$ docker run -d --name atomic-deployment --publish 5433:5432 --mount source=atomictest,target=/data my-atomic-deployment
+```
